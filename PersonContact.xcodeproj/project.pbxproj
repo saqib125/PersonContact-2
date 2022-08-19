@@ -14,6 +14,11 @@
 		7095A11D28AFD87C00FA7797 /* PersonContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A11C28AFD87C00FA7797 /* PersonContactTests.swift */; };
 		7095A12728AFD87C00FA7797 /* PersonContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A12628AFD87C00FA7797 /* PersonContactUITests.swift */; };
 		7095A12928AFD87C00FA7797 /* PersonContactUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A12828AFD87C00FA7797 /* PersonContactUITestsLaunchTests.swift */; };
+		7095A13628AFD8CE00FA7797 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7095A13528AFD8CE00FA7797 /* data.json */; };
+		7095A13828AFD8F400FA7797 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A13728AFD8F400FA7797 /* User.swift */; };
+		7095A13A28AFD93800FA7797 /* ReadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A13928AFD93800FA7797 /* ReadData.swift */; };
+		7095A13C28AFE4E000FA7797 /* CharacterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A13B28AFE4E000FA7797 /* CharacterRow.swift */; };
+		7095A13E28AFE7AD00FA7797 /* CharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7095A13D28AFE7AC00FA7797 /* CharacterDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		7095A12228AFD87C00FA7797 /* PersonContactUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersonContactUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7095A12628AFD87C00FA7797 /* PersonContactUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonContactUITests.swift; sourceTree = "<group>"; };
 		7095A12828AFD87C00FA7797 /* PersonContactUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonContactUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7095A13528AFD8CE00FA7797 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		7095A13728AFD8F400FA7797 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7095A13928AFD93800FA7797 /* ReadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadData.swift; sourceTree = "<group>"; };
+		7095A13B28AFE4E000FA7797 /* CharacterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRow.swift; sourceTree = "<group>"; };
+		7095A13D28AFE7AC00FA7797 /* CharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +106,13 @@
 			children = (
 				7095A10B28AFD87900FA7797 /* PersonContactApp.swift */,
 				7095A10D28AFD87900FA7797 /* ContentView.swift */,
+				7095A13528AFD8CE00FA7797 /* data.json */,
 				7095A10F28AFD87C00FA7797 /* Assets.xcassets */,
 				7095A11128AFD87C00FA7797 /* Preview Content */,
+				7095A13728AFD8F400FA7797 /* User.swift */,
+				7095A13928AFD93800FA7797 /* ReadData.swift */,
+				7095A13B28AFE4E000FA7797 /* CharacterRow.swift */,
+				7095A13D28AFE7AC00FA7797 /* CharacterDetail.swift */,
 			);
 			path = PersonContact;
 			sourceTree = "<group>";
@@ -232,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7095A11328AFD87C00FA7797 /* Preview Assets.xcassets in Resources */,
+				7095A13628AFD8CE00FA7797 /* data.json in Resources */,
 				7095A11028AFD87C00FA7797 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7095A13E28AFE7AD00FA7797 /* CharacterDetail.swift in Sources */,
+				7095A13C28AFE4E000FA7797 /* CharacterRow.swift in Sources */,
 				7095A10E28AFD87900FA7797 /* ContentView.swift in Sources */,
 				7095A10C28AFD87900FA7797 /* PersonContactApp.swift in Sources */,
+				7095A13828AFD8F400FA7797 /* User.swift in Sources */,
+				7095A13A28AFD93800FA7797 /* ReadData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
