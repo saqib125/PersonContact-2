@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var searchtext = ""
+    
     var body: some View {
         VStack{
             NavigationView {
@@ -18,77 +20,66 @@ struct ContentView: View {
                                     CharacterDetail(character: character)){
                         CharacterRow(character: character)
                     }
-                }                
+                                    .navigationBarBackButtonHidden(true)
+                }
+                .searchable(text: $searchtext)
+                .navigationTitle("Contacts")
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        
-                        Button {
-                        } label: {
-                            Image("searchicon")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(Color.orange)
-                        }
-                        .offset(x:-40)
-                        Text("Contacts")
-                            .font(.system(size: 30.0))
-                            .font(.headline).bold()
-                            .offset(x:-10)
-                        Button {
-                            print("Edit button was tapped")
-                        } label: {
-                            Image("addicon")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(Color.orange)
+                    ToolbarItemGroup(placement: .navigationBarLeading) {
+                        Button(action: {
                             
-                        }
-                        .offset(x:30)
+                        }, label: {
+                            Image(systemName: "magnifyingglass")
+                        })
+                    }
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button(action: {}, label: {
+                            Image(systemName: "plus")
+                        })
                     }
                 }
-                
+                .accentColor(.orange)
             }
             .navigationViewStyle(StackNavigationViewStyle())
-            
         }
     }
-    
 }
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
-    struct SearchBar: UIViewRepresentable {
+}
+struct SearchBar: UIViewRepresentable {
+    
+    @Binding var text: String
+    
+    class Coordinator: NSObject, UISearchBarDelegate {
         
         @Binding var text: String
         
-        class Coordinator: NSObject, UISearchBarDelegate {
-            
-            @Binding var text: String
-            
-            init(text: Binding<String>) {
-                _text = text
-            }
-            
-            func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-                text = searchText
-            }
+        init(text: Binding<String>) {
+            _text = text
         }
         
-        func makeCoordinator() -> Coordinator {
-            return Coordinator(text: $text)
-        }
-        
-        func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
-            let searchBar = UISearchBar(frame: .zero)
-            searchBar.delegate = context.coordinator
-            return searchBar
-        }
-        
-        func updateUIView(_ uiView: UISearchBar,
-                          context: UIViewRepresentableContext<SearchBar>) {
-            uiView.text = text
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            text = searchText
         }
     }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(text: $text)
+    }
+    
+    func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
+        let searchBar = UISearchBar(frame: .zero)
+        searchBar.delegate = context.coordinator
+        return searchBar
+    }
+    
+    func updateUIView(_ uiView: UISearchBar,
+                      context: UIViewRepresentableContext<SearchBar>) {
+        uiView.text = text
+    }
+}
